@@ -22,13 +22,13 @@ a:hover {
   color: #535bf2;
 }
 
-body {
+/* body {
   margin: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-}
+} */
 
 h1 {
   font-size: 3.2em;
@@ -65,4 +65,46 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+@font-face {
+  font-family: 'france';
+  src: local('france'), url(/src/Assets/Fonts/france-font/FranceRegular-eZx23.ttf) format('ttf');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
+
+@font-face {
+  font-family: 'facon';
+  src: local('facon'), url(/src/Assets/Fonts/facon-font/Facon-4pK4.ttf) format('ttf');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                          'embedded-opentype', and 'svg' */
+}
+
+@font-face {
+  font-family: 'paper';
+  src: local('paper'), url(/src/Assets/Fonts/paper-tape-font/PaperTape-DOjgR.ttf) format('ttf');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                          'embedded-opentype', and 'svg' */
+}
+
+@font-face {
+  font-family: 'rumor';
+  src: local('rumor'), url(/src/Assets/Fonts/the-rumor-font/TheRumor-ALKoM.ttf) format('ttf');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                          'embedded-opentype', and 'svg' */
+}
+
+@font-face {
+  font-family: 'tundra';
+  src: local('tundra'), url(/src/Assets/Fonts/tundra-font/TundraRegular-mLRPm.ttf) format('ttf');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                          'embedded-opentype', and 'svg' */
+}
+
+@font-face {
+  font-family: 'draco';
+  src: local('draco'), url(/src/Assets/Fonts/erbos-draco-monospaced-nbp-font/ErbosDraco1StNbpRegular-99V5.ttf) format('ttf');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                          'embedded-opentype', and 'svg' */
 }
