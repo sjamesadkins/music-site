@@ -9,8 +9,8 @@ import "./Navigator.css";
 const Navigator = () => {
   return (
   <>
-    <Navbar expand={false} bg="dark" variant="dark" className="bg-body-tertiary mb-3">
-      <Container fluid style={{ background: "black" }}>
+    <Navbar expand={false} variant="dark">
+      <Container fluid className="span" >
         <Navbar.Brand href="#">
           <Image
           src={adkinsLogo}
@@ -22,7 +22,7 @@ const Navigator = () => {
         />
         </Navbar.Brand>
         {/* TODO: FIGURE OUT USING CUSTOM FONTS */}
-        <Navbar.Text className="font-face-fr" style={{ fontSize: "280%", color: "#fff7e6" }}>Sam Adkins Music</Navbar.Text>
+        <Navbar.Text className="font-face-rumor" >Sam Adkins</Navbar.Text>
         <Navbar.Toggle aria-controls={`offcanvasNavbar-expand`} />
         <Navbar.Offcanvas
           id={`offcanvasNavbar-expand`}

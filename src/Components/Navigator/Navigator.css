@@ -1,4 +1,15 @@
-.font-face-fr {
-    font-family: "france";
-    font-size: 300px;
+.font-face-rumor {
+    font-family: "rumor";
+    font-size: 350%;
+    color: #fff7e6;
+    padding-right: 100px;
+}
+
+.navbar {
+    background-color: #b3cccc;
+}
+
+.span {
+    background-color: #242424;
+    width: 100%;
 }

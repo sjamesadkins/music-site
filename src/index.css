@@ -3,8 +3,8 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  /* color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87); */
   background-color: #242424;
 
   font-synthesis: none;
@@ -54,10 +54,10 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
   :root {
     color: #213547;
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
   }
   a:hover {
     color: #747bff;
@@ -69,42 +69,42 @@ button:focus-visible {
 
 @font-face {
   font-family: 'france';
-  src: local('france'), url(/src/Assets/Fonts/france-font/FranceRegular-eZx23.ttf) format('ttf');
+  src: local('france'), url(/src/Assets/Fonts/france-font/FranceRegular-eZx23.ttf) format('truetype');
   /* other formats include: 'woff2', 'truetype, 'opentype',
                             'embedded-opentype', and 'svg' */
 }
 
 @font-face {
   font-family: 'facon';
-  src: local('facon'), url(/src/Assets/Fonts/facon-font/Facon-4pK4.ttf) format('ttf');
+  src: local('facon'), url(/src/Assets/Fonts/facon-font/Facon-4pK4.ttf) format('truetype');
   /* other formats include: 'woff2', 'truetype, 'opentype',
                           'embedded-opentype', and 'svg' */
 }
 
 @font-face {
   font-family: 'paper';
-  src: local('paper'), url(/src/Assets/Fonts/paper-tape-font/PaperTape-DOjgR.ttf) format('ttf');
+  src: local('paper'), url(/src/Assets/Fonts/paper-tape-font/PaperTape-DOjgR.ttf) format('truetype');
   /* other formats include: 'woff2', 'truetype, 'opentype',
                           'embedded-opentype', and 'svg' */
 }
 
 @font-face {
   font-family: 'rumor';
-  src: local('rumor'), url(/src/Assets/Fonts/the-rumor-font/TheRumor-ALKoM.ttf) format('ttf');
+  src: local('rumor'), url(/src/Assets/Fonts/the-rumor-font/TheRumor-ALKoM.ttf) format('truetype');
   /* other formats include: 'woff2', 'truetype, 'opentype',
                           'embedded-opentype', and 'svg' */
 }
 
 @font-face {
   font-family: 'tundra';
-  src: local('tundra'), url(/src/Assets/Fonts/tundra-font/TundraRegular-mLRPm.ttf) format('ttf');
+  src: local('tundra'), url(/src/Assets/Fonts/tundra-font/TundraRegular-mLRPm.ttf) format('truetype');
   /* other formats include: 'woff2', 'truetype, 'opentype',
                           'embedded-opentype', and 'svg' */
 }
 
 @font-face {
   font-family: 'draco';
-  src: local('draco'), url(/src/Assets/Fonts/erbos-draco-monospaced-nbp-font/ErbosDraco1StNbpRegular-99V5.ttf) format('ttf');
+  src: local('draco'), url(/src/Assets/Fonts/erbos-draco-monospaced-nbp-font/ErbosDraco1StNbpRegular-99V5.ttf) format('truetype');
   /* other formats include: 'woff2', 'truetype, 'opentype',
                           'embedded-opentype', and 'svg' */
 }
