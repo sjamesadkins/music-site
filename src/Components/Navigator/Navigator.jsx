@@ -1,3 +1,5 @@
+import About from "../About/About.jsx";
+
 import Container from "react-bootstrap/Container";
 import Image from "react-bootstrap/Image";
 import Nav from "react-bootstrap/Nav";
@@ -6,7 +8,8 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import adkinsLogo from "/src/Assets/Images/adkinsLogo.jpg";
 import "./Navigator.css";
 
-const Navigator = () => {
+
+const Navigator = (props) => {
   return (
   <>
     <Navbar expand={false} variant="dark">
@@ -30,14 +33,14 @@ const Navigator = () => {
           placement="end"
           style={{ background: "black" }}
         >
-          <Offcanvas.Header closeButton>
+          <Offcanvas.Header closeButton closeVariant="white" >
             <Offcanvas.Title style={{ color: "white" }} id={`offcanvasNavbarLabel-expand`}>
               Discover
             </Offcanvas.Title>
           </Offcanvas.Header>
           <Offcanvas.Body style={{ background: "#b3cccc" }} >
             <Nav className="justify-content-end flex-grow-1 pe-3">
-              <Nav.Link href="#action1" >About</Nav.Link>
+              <Nav.Link href="#action2" >About</Nav.Link>
               <Nav.Link href="#action2" >Music</Nav.Link>
               <Nav.Link href="#action2" >Videos</Nav.Link>
               <Nav.Link href="#action2" >Photos</Nav.Link>
