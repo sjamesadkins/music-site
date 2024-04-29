@@ -1,8 +1,15 @@
-.font-face-rumor {
+.font-face-rumor-lg {
     font-family: "rumor";
     font-size: 350%;
     color: #fff7e6;
     padding-right: 100px;
+}
+
+.font-face-rumor-sm {
+    font-family: "rumor";
+    font-size: 200%;
+    color: #9e6f3e;
+    /* padding-right: 100px; */
 }
 
 .navbar {

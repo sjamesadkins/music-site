@@ -1,7 +1,7 @@
 const About = () => {
   return (
     <>
-      <h3>Beep Boop Beep</h3>
+      <h3>About</h3>
       <p>Sam Adkins' Personal Music Page</p>
     </>
   );
