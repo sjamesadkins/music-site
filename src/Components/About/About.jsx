@@ -1,9 +1,11 @@
+import './About.css';
+
 const About = () => {
   return (
-    <>
-      <h3>About</h3>
-      <p>Sam Adkins' Personal Music Page</p>
-    </>
+    <div className="page">
+      <h3 className="font-face-rumor-sm header">About</h3>
+      <p className="text">Sam Adkins' About Page</p>
+    </div>
   );
 };
 

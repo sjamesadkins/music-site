@@ -5,6 +5,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { useState } from "react";
 
+import Home from "../Home/Home.jsx";
 import About from "../About/About.jsx";
 import Music from "../Music/Music.jsx";
 import Videos from "../Videos/Videos.jsx";
@@ -14,9 +15,9 @@ import Contact from "../Contact/Contact.jsx";
 import adkinsLogo from "/src/Assets/Images/adkinsLogo.jpg";
 import "./Navigator.css";
 
-const Navigator = ({ ...props }) => {
+const Navigator = () => {
 
-  const [view, setView] = useState(views["home"]);
+  const [view, setView] = useState(<Home />);
 
   const views = {
     "home": <Home />,
@@ -24,7 +25,7 @@ const Navigator = ({ ...props }) => {
     "music": <Music />, 
     "videos": <Videos />, 
     "photos": <Photos />, 
-    "contact": <Contact />
+    "contact": <Contact />,
   }
 
   const handleClick = (view) => {
@@ -33,7 +34,7 @@ const Navigator = ({ ...props }) => {
 
   return (
     <>
-      <Navbar expand={false} variant="dark">
+      <Navbar expand={false} variant="dark" collapseOnSelect>
         <Container fluid className="span">
           <Navbar.Brand href="#">
             <Image
@@ -53,7 +54,7 @@ const Navigator = ({ ...props }) => {
             placement="end"
             style={{ background: "black", width: "300px" }}
           >
-            <Offcanvas.Header closeButton closeVariant="white">
+            <Offcanvas.Header closeButton closeVariant="white" >
               <Offcanvas.Title
                 className="font-face-rumor-lg"
                 style={{ fontSize: "200%" }}
@@ -69,16 +70,14 @@ const Navigator = ({ ...props }) => {
                   href="#about"
                   id="about"
                   onClick={() => handleClick("about")}
-                  {...props}
                 >
                   About
                 </Nav.Link>
-                <Nav.Link
+                <Nav.Link 
                   className="font-face-rumor-sm"
                   href="#music"
                   id="music"
                   onClick={() => handleClick("music")}
-                  {...props}
                 >
                   Music
                 </Nav.Link>
@@ -87,7 +86,6 @@ const Navigator = ({ ...props }) => {
                   href="#videos"
                   id="videos"
                   onClick={() => handleClick("videos")}
-                  {...props}
                 >
                   Videos
                 </Nav.Link>
@@ -96,7 +94,6 @@ const Navigator = ({ ...props }) => {
                   href="#photos"
                   id="photos"
                   onClick={() => handleClick("photos")}
-                  {...props}
                 >
                   Photos
                 </Nav.Link>
@@ -105,7 +102,6 @@ const Navigator = ({ ...props }) => {
                   href="#contact"
                   id="contact"
                   onClick={() => handleClick("contact")}
-                  {...props}
                 >
                   Contact
                 </Nav.Link>

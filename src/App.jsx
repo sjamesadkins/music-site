@@ -1,7 +1,6 @@
-import About from "./Components/About/About.jsx";
 
-import { useState } from 'react'
-import './App.css'
+import { useState } from 'react';
+import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Navigator from './Components/Navigator/Navigator.jsx';
@@ -12,7 +11,6 @@ function App() {
   return (
     <>
       <Navigator />
-      <About />
 
       {/* <div>
         <a href="https://vitejs.dev" target="_blank">
