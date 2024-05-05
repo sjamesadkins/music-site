@@ -1,0 +1,37 @@
+.page {
+    background-color: #242424;
+    width: 100%;
+    text-align: center;
+    padding-left: 20%;
+    padding-right: 20%;
+    color: #fff7e6;
+}
+
+.form {
+    padding-bottom: 3%;
+}
+
+.btn, .btn:focus, .btn:active {
+    color: #fff7e6;
+    background-color: #242424;
+    border-color: #b3cccc;
+}
+
+.btn:hover {
+    color: red;
+    background-color: #b3cccc;
+    border-color: #b3cccc;
+}
+
+.font-face-rumor-sm {
+    font-family: "rumor";
+    font-size: 200%;
+    color: #fff7e6;
+}
+
+.header {
+    padding-top: 20pt;
+    padding-bottom: 20pt;
+}
+
+  

@@ -1,9 +1,11 @@
+import "./Music.css";
+
 const Music = () => {
     return (
-      <>
-        <h3>Music</h3>
+      <div className="page">
+        <h3 className="font-face-rumor-sm header">Music</h3>
         <p>Sam Adkins' Personal Music Page</p>
-      </>
+      </div>
     );
   };
   

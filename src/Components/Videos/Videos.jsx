@@ -1,9 +1,11 @@
+import "./Videos.css";
+
 const Videos = () => {
     return (
-      <>
-        <h3>Videos</h3>
+      <div className="page">
+        <h3 className="font-face-rumor-sm header">Videos</h3>
         <p>Sam Adkins' Video Page</p>
-      </>
+      </div>
     );
   };
   

@@ -1,9 +1,11 @@
+import "./Photos.css";
+
 const Photos = () => {
     return (
-      <>
-        <h3>Photos</h3>
+      <div className="page">
+        <h3 className="font-face-rumor-sm header">Photos</h3>
         <p>Sam Adkins' Photo Page</p>
-      </>
+      </div>
     );
   };
   
