@@ -5,7 +5,6 @@ import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { useState } from "react";
 
-import Home from "../Home/Home.jsx";
 import About from "../About/About.jsx";
 import Music from "../Music/Music.jsx";
 import Videos from "../Videos/Videos.jsx";
@@ -17,10 +16,12 @@ import "./Navigator.css";
 
 const Navigator = () => {
 
-  const [view, setView] = useState(<Home />);
+  // attempt to make page state remain -- does not work
+  let initialView = <About />;
+
+  const [view, setView] = useState(initialView);
 
   const views = {
-    "home": <Home />,
     "about": <About />, 
     "music": <Music />, 
     "videos": <Videos />, 
@@ -30,6 +31,8 @@ const Navigator = () => {
 
   const handleClick = (view) => {
     setView(views[view])
+    // attempt to make page state remain -- does not work
+    initialView = views[view];
   }
 
   return (
@@ -44,6 +47,7 @@ const Navigator = () => {
               height="200"
               className="d-inline-block align-top"
               alt="Adkins Music Logo"
+              onClick={() => handleClick("about")}
             />
           </Navbar.Brand>
           <Navbar.Text className="font-face-rumor-lg">Sam Adkins</Navbar.Text>
