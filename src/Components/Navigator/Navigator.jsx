@@ -11,7 +11,7 @@ import Videos from "../Videos/Videos.jsx";
 import Photos from "../Photos/Photos.jsx";
 import Contact from "../Contact/Contact.jsx";
 
-import adkinsLogo from "/src/Assets/Images/adkinsLogo.jpg";
+import logo from "/src/Assets/Images/logo.jpg";
 import "./Navigator.css";
 
 const Navigator = () => {
@@ -41,7 +41,7 @@ const Navigator = () => {
         <Container fluid className="span">
           <Navbar.Brand href="#">
             <Image
-              src={adkinsLogo}
+              src={logo}
               roundedCircle
               width="200"
               height="200"

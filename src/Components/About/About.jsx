@@ -11,8 +11,8 @@ const About = () => {
       <Image
               src={about}
               rounded
-              width="500"
-              height="600"
+              width="600"
+              height="750"
               className="d-inline-block align-top"
               alt="Adkins Music Logo"
       />

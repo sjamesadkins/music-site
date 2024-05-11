@@ -7,68 +7,90 @@ import fifth from "/src/Assets/Images/5.jpg";
 import sixth from "/src/Assets/Images/6.jpg";
 import Image from "react-bootstrap/Image";
 
-
-
 const Photos = () => {
-    return (
-      <div className="page flex">
-        <h3 className="font-face-rumor-sm header">Photos</h3>
-        <div className="grid-tiles">
+  return (
+    <div className="page flex">
+      <h3 className="font-face-rumor-sm header">Photos</h3>
+      <div className="column">
         <Image
-              src={first}
-              rounded
-              width="500"
-              height="600"
-              className="d-inline-block align-top grid-tile"
-              alt="1"
-        /></div>
-        <div className="grid-tiles">
+          className="img"
+          src={first}
+          rounded
+          //   width="150%"
+          //   height="150%"
+          alt="1"
+        />
         <Image
-              src={second}
-              rounded
-              width="500"
-              height="600"
-              className="d-inline-block align-top grid-tile"
-              alt="2"
-        /></div>
-        <div className="grid-tiles">
+          className="img"
+          src={second}
+          rounded
+          //   width="150%"
+          //   height="150%"
+          alt="2"
+        />
         <Image
-              src={third}
-              rounded
-              width="500"
-              height="600"
-              className="d-inline-block align-top grid-tile"
-              alt="3"
-        /></div>
-        <div className="grid-tiles">
-        <Image
-              src={fourth}
-              rounded
-              width="500"
-              height="600"
-              className="d-inline-block align-top grid-tile"
-              alt="4"
-        /></div>
-        <div className="grid-tiles">
-        <Image
-              src={fifth}
-              rounded
-              width="500"
-              height="600"
-              className="d-inline-block align-top grid-tile"
-              alt="5"
-        /></div>
-        <div className="grid-tiles">
-        <Image
-              src={sixth}
-              rounded
-              width="500"
-              height="600"
-              className="d-inline-block align-top grid-tile"
-              alt="6"
-        /></div>
+          className="img"
+          src={third}
+          rounded
+          //   width="150%"
+          //   height="150%"
+          alt="3"
+        />
       </div>
-    );
-  };
-  
-  export default Photos;
+      <div className="column">
+        <Image
+          className="img"
+          src={first}
+          rounded
+          //   width="150%"
+          //   height="150%"
+          alt="1"
+        />
+        <Image
+          className="img"
+          src={second}
+          rounded
+          //   width="150%"
+          //   height="150%"
+          alt="2"
+        />
+        <Image
+          className="img"
+          src={third}
+          rounded
+          //   width="150%"
+          //   height="150%"
+          alt="3"
+        />
+      </div>
+      <div className="column">
+        <Image
+          className="img"
+          src={first}
+          rounded
+          //   width="150%"
+          //   height="150%"
+          alt="1"
+        />
+        <Image
+          className="img"
+          src={second}
+          rounded
+          //   width="150%"
+          //   height="150%"
+          alt="2"
+        />
+        <Image
+          className="img"
+          src={third}
+          rounded
+          //   width="150%"
+          //   height="150%"
+          alt="3"
+        />
+      </div>
+    </div>
+  );
+};
+
+export default Photos;

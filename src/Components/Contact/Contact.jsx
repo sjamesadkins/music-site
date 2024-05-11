@@ -5,27 +5,27 @@ import "./Contact.css";
 import { ModalBody } from "react-bootstrap";
 
 const Contact = () => {
-  const [show, setShow] = useState(false);
+  // const [show, setShow] = useState(false);
 
-  const showModal = () => {
-    const handleClick = () => setShow(true);
-    const handleClose = () => setShow(false);
+  // const showModal = () => {
+  //   const handleClick = () => setShow(true);
+  //   const handleClose = () => setShow(false);
 
-    return (
-      <div>
-        <Modal show={show} onHide={handleClose}>
-          <Modal.Dialog>
-            <Modal.Header closeButton>
-              <Modal.Title>Message Sent!</Modal.Title>
-            </Modal.Header>
-            <ModalBody>
-              <p>Thank you for reaching out!</p>
-            </ModalBody>
-          </Modal.Dialog>
-        </Modal>
-      </div>
-    );
-  };
+  //   return (
+  //     <div>
+  //       <Modal show={show} onHide={handleClose}>
+  //         <Modal.Dialog>
+  //           <Modal.Header closeButton>
+  //             <Modal.Title>Message Sent!</Modal.Title>
+  //           </Modal.Header>
+  //           <ModalBody>
+  //             <p>Thank you for reaching out!</p>
+  //           </ModalBody>
+  //         </Modal.Dialog>
+  //       </Modal>
+  //     </div>
+  //   );
+  // };
 
   return (
     <div className="page">
@@ -49,7 +49,7 @@ const Contact = () => {
         </Form.Group>
         <Button
           className="btn"
-          onClick={handleClick}
+          // onClick={handleClick}
           type="submit"
           size="lg"
           variant="outline"
