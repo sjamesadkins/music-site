@@ -8,7 +8,16 @@
 .font-face-rumor-sm {
     font-family: "rumor";
     font-size: 200%;
-    color: #9e6f3e;
+    /* color: #9e6f3e; */
+    color: #d7820a;
+    /* padding-right: 100px; */
+}
+
+.font-face-rumor-sm-nav {
+    font-family: "rumor";
+    font-size: 200%;
+    /* color: #9e6f3e; */
+    color: #bf7000;
     /* padding-right: 100px; */
 }
 

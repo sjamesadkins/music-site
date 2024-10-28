@@ -18,9 +18,12 @@
 }
 
 .btn:hover {
-    color: red;
+    color: black;
     background-color: #b3cccc;
-    border-color: #b3cccc;
+    /* border-color: #b3cccc; */
+    border-color: #d7820a;
+    border-width: 2px;
+    font-weight: bold;
 }
 
 .font-face-rumor-sm {

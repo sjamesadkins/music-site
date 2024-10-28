@@ -11,7 +11,8 @@ import Videos from "../Videos/Videos.jsx";
 import Photos from "../Photos/Photos.jsx";
 import Contact from "../Contact/Contact.jsx";
 
-import adkinsLogo from "/src/Assets/Images/adkinsLogo.jpg";
+// import adkinsLogo from "/src/Assets/Images/adkinsLogo.jpg";
+import sWaves from "/src/Assets/Images/sWaves.jpg";
 import "./Navigator.css";
 
 const Navigator = () => {
@@ -41,24 +42,24 @@ const Navigator = () => {
         <Container fluid className="span">
           <Navbar.Brand href="#">
             <Image
-              src={adkinsLogo}
+              src={sWaves}
               roundedCircle
-              width="200"
+              width="auto"
               height="200"
               className="d-inline-block align-top"
               alt="Adkins Music Logo"
               onClick={() => handleClick("about")}
             />
           </Navbar.Brand>
-          <Navbar.Text className="font-face-rumor-lg">Sam Adkins</Navbar.Text>
+          <Navbar.Text className="font-face-rumor-lg">Fiction</Navbar.Text>
           <Navbar.Toggle aria-controls={`offcanvasNavbar-expand`} />
           <Navbar.Offcanvas
             id={`offcanvasNavbar-expand`}
             aria-labelledby={`offcanvasNavbarLabel-expand`}
             placement="end"
-            style={{ background: "black", width: "300px" }}
+            style={{ background: "black", width: "auto" }}
           >
-            <Offcanvas.Header closeButton closeVariant="white" >
+            <Offcanvas.Header >
               <Offcanvas.Title
                 className="font-face-rumor-lg"
                 style={{ fontSize: "200%" }}
@@ -70,7 +71,7 @@ const Navigator = () => {
             <Offcanvas.Body style={{ background: "#b3cccc" }}>
               <Nav className="justify-content-end flex-grow-1 pe-3">
                 <Nav.Link
-                  className="font-face-rumor-sm"
+                  className="font-face-rumor-sm-nav"
                   href="#about"
                   id="about"
                   onClick={() => handleClick("about")}
@@ -78,7 +79,7 @@ const Navigator = () => {
                   About
                 </Nav.Link>
                 <Nav.Link 
-                  className="font-face-rumor-sm"
+                  className="font-face-rumor-sm-nav"
                   href="#music"
                   id="music"
                   onClick={() => handleClick("music")}
@@ -86,7 +87,7 @@ const Navigator = () => {
                   Music
                 </Nav.Link>
                 <Nav.Link
-                  className="font-face-rumor-sm"
+                  className="font-face-rumor-sm-nav"
                   href="#videos"
                   id="videos"
                   onClick={() => handleClick("videos")}
@@ -94,7 +95,7 @@ const Navigator = () => {
                   Videos
                 </Nav.Link>
                 <Nav.Link
-                  className="font-face-rumor-sm"
+                  className="font-face-rumor-sm-nav"
                   href="#photos"
                   id="photos"
                   onClick={() => handleClick("photos")}
@@ -102,7 +103,7 @@ const Navigator = () => {
                   Photos
                 </Nav.Link>
                 <Nav.Link
-                  className="font-face-rumor-sm"
+                  className="font-face-rumor-sm-nav"
                   href="#contact"
                   id="contact"
                   onClick={() => handleClick("contact")}
