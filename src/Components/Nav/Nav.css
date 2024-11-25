@@ -1,7 +1,8 @@
 .font-face-rumor-lg {
     font-family: "rumor";
     font-size: 500%;
-    color: #fff7e6;
+    /* color: #fff7e6; */
+    color: #006cbf;
     padding-right: 120px;
 }
 
@@ -16,18 +17,28 @@
 .font-face-rumor-sm-nav {
     font-family: "rumor";
     font-size: 200%;
-    /* color: #9e6f3e; */
     color: #bf7000;
-    /* padding-right: 100px; */
 }
 
-.navbar {
+.font-face-rumor-sm-nav:hover {
+    font-family: "rumor";
+    font-size: 200%;
+    color: #006cbf;
+}
+
+/* .navbar {
     background-color: #b3cccc;
+} */
+
+.navbar {
+    background-color: #511c8a;
 }
 
 .span {
     background-color: #242424;
+    /* width: 100%; */
     width: 100%;
+
 }
 
 * {

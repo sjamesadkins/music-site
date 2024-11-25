@@ -6,9 +6,7 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import { useState } from "react";
 
 import About from "../About/About.jsx";
-import Music from "../Music/Music.jsx";
-import Videos from "../Videos/Videos.jsx";
-import Photos from "../Photos/Photos.jsx";
+import Media from "../Media/Media.jsx";
 import Contact from "../Contact/Contact.jsx";
 
 // import adkinsLogo from "/src/Assets/Images/adkinsLogo.jpg";
@@ -24,9 +22,7 @@ const Navigator = () => {
 
   const views = {
     "about": <About />, 
-    "music": <Music />, 
-    "videos": <Videos />, 
-    "photos": <Photos />, 
+    "media": <Media />, 
     "contact": <Contact />,
   }
 
@@ -78,29 +74,13 @@ const Navigator = () => {
                 >
                   About
                 </Nav.Link>
-                <Nav.Link 
-                  className="font-face-rumor-sm-nav"
-                  href="#music"
-                  id="music"
-                  onClick={() => handleClick("music")}
-                >
-                  Music
-                </Nav.Link>
                 <Nav.Link
                   className="font-face-rumor-sm-nav"
-                  href="#videos"
-                  id="videos"
-                  onClick={() => handleClick("videos")}
+                  href="#media"
+                  id="media"
+                  onClick={() => handleClick("media")}
                 >
-                  Videos
-                </Nav.Link>
-                <Nav.Link
-                  className="font-face-rumor-sm-nav"
-                  href="#photos"
-                  id="photos"
-                  onClick={() => handleClick("photos")}
-                >
-                  Photos
+                  Media
                 </Nav.Link>
                 <Nav.Link
                   className="font-face-rumor-sm-nav"

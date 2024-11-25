@@ -3,14 +3,14 @@ import { useState } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import Navigator from './Components/Navigator/Navigator.jsx';
+import Navi from './Components/Nav/Nav.jsx';
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <Navigator />
+      <Navi />
 
       {/* <div>
         <a href="https://vitejs.dev" target="_blank">

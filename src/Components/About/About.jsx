@@ -13,7 +13,8 @@ const About = () => {
               rounded
               width="600"
               height="750"
-              className="d-inline-block align-top"
+              // className="d-inline-block align-top"
+              className="img"
               alt="Adkins Music Logo"
       />
       <div className="text">
@@ -29,7 +30,7 @@ const About = () => {
         </p>
         <p>Fiction can be booked to play sets of original and cover music for up to three hours. 
           Set list selections can be defined and catered to the event.
-          Please visit the Music, Video, and Photo pages to get a sense of his musicality and presence.
+          Please visit the Music, Video, and Photo pages to get a sense of musicality and presence.
           Then head on over to the Contact page for bookings. Thanks for the visit!
         </p>
       </div>
