@@ -6,8 +6,6 @@ import '/src/Assets/Fonts/france-font/FranceRegular-eZx23.ttf'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    {/* <App className="dev-dep" /> */}
     <App />
-
   </React.StrictMode>,
 )
