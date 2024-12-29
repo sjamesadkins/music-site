@@ -10,7 +10,8 @@ import Media from "../Media/Media.jsx";
 import Contact from "../Contact/Contact.jsx";
 
 // import adkinsLogo from "/src/Assets/Images/adkinsLogo.jpg";
-import sWaves from "/src/Assets/Images/sWaves.jpg";
+// import sWaves from "/src/Assets/Images/sWaves.jpg";
+import laurels from "/src/Assets/Images/laurels.jpg";
 import "./Navigator.css";
 
 const Navigator = () => {
@@ -38,7 +39,7 @@ const Navigator = () => {
         <Container fluid className="span">
           <Navbar.Brand href="#">
             <Image
-              src={sWaves}
+              src={laurels}
               roundedCircle
               width="auto"
               height="200"
@@ -47,7 +48,7 @@ const Navigator = () => {
               onClick={() => handleClick("about")}
             />
           </Navbar.Brand>
-          <Navbar.Text className="font-face-rumor-lg">Fiction</Navbar.Text>
+          <Navbar.Text className="font-face-rumor-lg">Laurels</Navbar.Text>
           <Navbar.Toggle aria-controls={`offcanvasNavbar-expand`} />
           <Navbar.Offcanvas
             id={`offcanvasNavbar-expand`}

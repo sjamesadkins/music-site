@@ -13,8 +13,14 @@ const Contact = () => {
 
   const [show, setShow] = useState(false);
   const [validation, setValidation] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  })
 
   const form = useRef();
+
 
   const handleClick = () => setShow(true);
   const handleClose = () => setShow(false);
@@ -57,16 +63,6 @@ const Contact = () => {
           })();
         </script>
 
-        <Formik
-          validationSchema={schema}
-          onSubmit={console.log}
-          initialValues={{
-            hand: '',
-            email: '',
-            message: '',
-          }}
-        >
-
           <Modal show={show} onHide={handleClose}>
             <Modal.Dialog>
               <Modal.Header closeButton>
@@ -78,7 +74,16 @@ const Contact = () => {
             </Modal.Dialog>
           </Modal>
 
-          <h3 className="font-face-rumor-sm header">Contact</h3>
+          <Formik
+          validationSchema={schema}
+          onSubmit={console.log()}
+          initialValues={{
+            hand: '',
+            email: '',
+            message: '',
+          }}
+        >
+          {/* <h3 className="font-face-rumor-sm header">Contact</h3> */}
           <Form ref={form} id="contact_form" onSubmit={sendEmail}>
             <Form.Group
               className="form"
@@ -87,7 +92,7 @@ const Contact = () => {
             >
               {/* <Form.Control type="hidden" name="contact_number" value="1" ></Form.Control> */}
               <Form.Label>Name</Form.Label>
-              <Form.Control type="text" name="user_name" placeholder="Your name here" required/>
+              <Form.Control type="text" name="user_name" placeholder="Your name here" required defaultValue={formData.name}/>
               <Form.Control.Feedback type="invalid" />
             </Form.Group>
             <Form.Group className="form" controlId="exampleForm.ControlInput2">
@@ -95,9 +100,10 @@ const Contact = () => {
               <Form.Control type="email" name="user_email" placeholder="name@example.com" required/>
             </Form.Group>
             <Form.Group className="form" controlId="exampleForm.ControlTextarea1">
-              <Form.Label>Gimme the Deets</Form.Label>
+              <Form.Label>Gimme us the Deets</Form.Label>
               <Form.Control as="textarea" name="message" placeholder="Write something good... " rows={5} required/>
             </Form.Group>
+
             <Button
               className="btn"
               onClick={handleClick}

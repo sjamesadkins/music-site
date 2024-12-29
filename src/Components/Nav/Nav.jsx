@@ -6,19 +6,11 @@ import { useState } from "react";
 import About from "../About/About.jsx";
 import Media from "../Media/Media.jsx";
 import Contact from "../Contact/Contact.jsx";
-import sWaves from "/src/Assets/Images/sWaves.jpg";
+import laurels from "/src/Assets/Images/laurels.jpg";
+
 import "./Nav.css";
 
 const Navi = () => {
-
-  // attempt to make page state remain -- does not work
-//   let initialView = <About />;
-
-    // const views = [
-    //     {"about": <About />}, 
-    //     {"media": <Media />}, 
-    //     {"contact": <Contact />},
-    // ];
 
         const views = {
         "about": <About />, 
@@ -30,7 +22,6 @@ const Navi = () => {
 
     const handleClick = (page) => {
         setView(views[page])
-        // attempt to make page state remain -- does not work
     };
 
   return (
@@ -39,7 +30,7 @@ const Navi = () => {
             <Container fluid className="span">
             <Navbar.Brand href="#">
                 <Image
-                src={sWaves}
+                src={laurels}
                 roundedCircle
                 width="auto"
                 height="200"
@@ -49,21 +40,19 @@ const Navi = () => {
                 />
             </Navbar.Brand>
             <Nav>
-                {Object.entries(views).map(([k, v]) => {
-                    return (<>
+                {Object.entries(views).map(([k], index) => {
+                    return (<div key={index}>
                     <Nav.Link 
-                        key={k}
-                        href={`#${v}`}
+                        href={`#${k}`}
                         className="font-face-rumor-sm-nav"
-                        id={`${k}`}
                         onClick={() => handleClick(k)}
                         >{k}
                     </Nav.Link>
-                    &nsbp&nsbp
-                    </>
+                    &nsbp&nsbp&nsbp&nsbp
+                    </div>
                     )})}
             </Nav>
-            <Navbar.Text className="font-face-rumor-lg">Fiction</Navbar.Text>
+            <Navbar.Text className="font-face-rumor-lg">Laurels</Navbar.Text>
             </Container>
         </Navbar>
       <div>{view}</div>
