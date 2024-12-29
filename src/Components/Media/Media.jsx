@@ -9,7 +9,7 @@ const content = [first, second, third, first, second, third]
 const Media = () => {
   return (
     <div className="page">
-      <h3 className="font-face-rumor-sm header">Media</h3>
+      {/* <h3 className="font-face-rumor-sm header">Media</h3> */}
       <div className="grid-container">
         {content.map((item, index) => {
           return (<Image

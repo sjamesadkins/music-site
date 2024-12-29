@@ -6,22 +6,26 @@ import { useState } from "react";
 import About from "../About/About.jsx";
 import Media from "../Media/Media.jsx";
 import Contact from "../Contact/Contact.jsx";
-import laurels from "/src/Assets/Images/laurels.jpg";
+import skull from "/src/Assets/Images/skull.jpg";
 
 import "./Nav.css";
 
 const Navi = () => {
 
-        const views = {
-        "about": <About />, 
+      const views = { 
         "media": <Media />, 
         "contact": <Contact />,
     };
 
-    const [view, setView] = useState(views["about"]);
+    const [view, setView] = useState(<About />);
 
     const handleClick = (page) => {
+      console.log(page)
+        if (page=="about") {
+          setView(<About />)
+        } else {
         setView(views[page])
+        }
     };
 
   return (
@@ -30,7 +34,7 @@ const Navi = () => {
             <Container fluid className="span">
             <Navbar.Brand href="#">
                 <Image
-                src={laurels}
+                src={skull}
                 roundedCircle
                 width="auto"
                 height="200"

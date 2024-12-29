@@ -39,7 +39,7 @@ const Navigator = () => {
         <Container fluid className="span">
           <Navbar.Brand href="#">
             <Image
-              src={laurels}
+              src={skull}
               roundedCircle
               width="auto"
               height="200"
