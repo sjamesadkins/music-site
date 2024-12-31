@@ -83,14 +83,12 @@ const Contact = () => {
             message: '',
           }}
         >
-          {/* <h3 className="font-face-rumor-sm header">Contact</h3> */}
           <Form ref={form} id="contact_form" onSubmit={sendEmail}>
             <Form.Group
               className="form"
               style={{ paddingTop: "3%" }}
               controlId="exampleForm.ControlInput1"
             >
-              {/* <Form.Control type="hidden" name="contact_number" value="1" ></Form.Control> */}
               <Form.Label>Name</Form.Label>
               <Form.Control type="text" name="user_name" placeholder="Your name here" required defaultValue={formData.name}/>
               <Form.Control.Feedback type="invalid" />

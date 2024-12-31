@@ -1,5 +1,4 @@
 .grid-container {
-  /* min-width:fit-content; */
   display: grid;
   justify-content: center;
   align-content: center;
@@ -10,13 +9,7 @@
 }
 
 .grid-item img {
-  /* max-width: 100%; */
-  /* min-width: 1000px;
-  width: 100%;
-  height: auto; */
   display: block;
-  /* align-content: center;
-  justify-content: center; */
 }
 
 .img {
@@ -28,28 +21,14 @@
 
 .left {
   grid-column: 1;
-
 }
 
-/* For Mobile Portrait View */
-@media screen and (max-device-width: 830px) and (orientation: portrait) {
+@media (max-device-width: 830px) {
   .grid-container {
     display: grid;
     justify-content: center;
     align-content: center;
-    grid-template-columns: 40vh;
-    gap: 2%;
-    padding: 100px;    
-  }
-}
-
-/* For Mobile Landscape View */
-@media screen and (max-device-width: 1000px) and (orientation: landscape) {
-  .grid-container {
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    grid-template-columns: 40vh;
+    grid-template-columns: 45vh;
     gap: 2%;
     padding: 100px;    
   }
