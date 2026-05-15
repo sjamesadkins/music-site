@@ -116,9 +116,10 @@ Single sweep across all surfaces:
 **2d. Vertical rhythm** — `src/Components/About/About.jsx` uses `<br><br><br><br>` for top spacing. Replace with `padding-top: 4rem` on `.text` (in `About.css`).
 
 **2e. Favicon + meta** — `index.html`:
-- Change `<link rel="icon" type="image/svg+xml" href="src/Assets/Images/skull.jpg"/>` to `<link rel="icon" type="image/jpeg" href="/src/Assets/Images/skull.jpg"/>` (correct MIME, leading slash for absolute path).
+- Change `<link rel="icon" type="image/svg+xml" href="src/Assets/Images/skull.jpg"/>` to `<link rel="icon" type="image/jpeg" href="src/Assets/Images/skull.jpg"/>` (correct MIME; keep relative path with no leading slash — Vite resolves index.html-referenced assets relative to the build base, so `src/...` works in both `base: "/music-site/"` and `base: "/"` modes).
 - Add `<meta name="description" content="The Silvertones — duo from St. Louis, MO. Book a show.">`.
-- Add Open Graph tags: `og:title`, `og:description`, `og:image` (pointing at `/src/Assets/Images/skull.jpg`), `og:url`, `og:type=website`. Repeat with `twitter:card=summary_large_image` and matching twitter tags.
+- Add Open Graph tags: `og:title`, `og:description`, `og:image`, `og:url`, `og:type=website`. Repeat with `twitter:card=summary_large_image` and matching twitter tags.
+- **`og:image` must be an absolute URL** (social scrapers don't resolve relative paths). Phase 1 value: `https://sjamesadkins.github.io/music-site/src/Assets/Images/skull.jpg`. Phase 2 value (updated in Step 13): `https://silvertoneslive.com/src/Assets/Images/skull.jpg`. Same for `og:url`.
 
 ### Step 3 — Silver gradient on the band name
 
@@ -140,12 +141,16 @@ Browser fallback: any browser without `background-clip: text` support renders th
 
 ### Step 4 — SVG laurels overlay on the skull image
 
-`Nav.jsx`: wrap the skull `<Image>` in a `<div className="brand-wrapper">` with `position: relative`. Add two SVG laurel-branch elements absolutely positioned over the skull — one on the left (curving inward), one on the right (mirrored). Both branches:
+`Nav.jsx`: wrap the skull `<Image>` in a `<div className="brand-wrapper">` with `position: relative`. Add two SVG laurel-branch elements absolutely positioned over the skull — one on the left (curving inward), one on the right (mirrored).
 
-- Fill: `#c0c0c0` (silver)
-- Stroke: `#bf5000` (orange), 1.5px
+**SVG sourcing decision: inline JSX, not imported file.** Because the fill and stroke colors are set via the existing CSS palette (silver fill `#c0c0c0`, orange stroke `#bf5000`), the SVG markup is written directly into `Nav.jsx` (as a small component, e.g., `const LaurelBranch = () => (<svg ...>...</svg>)`). This keeps the colors editable in CSS via class selectors on the `<path>` elements, and avoids needing an SVGR-style Vite plugin to import SVGs as components.
+
+Both branches:
+
+- Fill: `#c0c0c0` (silver) — set via CSS class `.laurel-leaf { fill: #c0c0c0; }`
+- Stroke: `#bf5000` (orange), 1.5px — set via CSS class `.laurel-leaf { stroke: #bf5000; stroke-width: 1.5px; }`
 - ~7 leaves per branch, hand-authored SVG paths
-- Stored as a single SVG file: `src/Assets/Images/laurel-branch.svg` (the file contains one branch; the right branch is rendered as the same element transformed with `scaleX(-1)`)
+- One `<LaurelBranch />` component rendered twice; the right instance gets `transform: scaleX(-1)` via CSS class
 - Positioned so leaves curve up around the temples/jaw of the skull, not obscuring the face
 
 CSS (in `Nav.css`):
@@ -304,7 +309,7 @@ In code:
 - `vite.config.js`: change `base: "/music-site/"` → `base: "/"`.
 - `package.json`: change `homepage` to `"https://silvertoneslive.com"`.
 - `package.json` `deploy` script: change to `vite build && gh-pages -d dist --cname silvertoneslive.com` so the deploy script re-writes the CNAME file on every deploy (prevents `gh-pages` from clobbering the one GitHub's UI added).
-- Update `index.html` OG `og:url` meta tag to use the new domain.
+- Update `index.html` `og:url` and `og:image` meta tags to use `https://silvertoneslive.com/...` (the Phase 1 absolute URLs at `sjamesadkins.github.io/music-site/...` won't resolve under the new domain).
 
 Then:
 ```bash
