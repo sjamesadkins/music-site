@@ -4,6 +4,14 @@
     color: #006cbf;
 }
 
+.silver-gradient {
+    color: #006cbf;
+    text-shadow:
+        -1px -1px 0 #e8e8e8,
+        -2px -1px 0 #c0c0c0,
+        -3px -2px 0 #808080;
+}
+
 .font-face-rumor-sm-nav {
     font-family: "rumor";
     font-size: 200%;

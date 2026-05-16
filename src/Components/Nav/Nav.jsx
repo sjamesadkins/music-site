@@ -5,7 +5,7 @@ import { useState } from "react";
 import About from "../About/About.jsx";
 import Media from "../Media/Media.jsx";
 import Contact from "../Contact/Contact.jsx";
-import skull from "/src/Assets/Images/skull.jpg";
+import skull from "/src/Assets/Images/silver_skull.png";
 
 import "./Nav.css";
 
@@ -36,7 +36,7 @@ const Navi = () => {
             </Navbar.Brand>
         </Navbar>
         <Navbar>
-          <Navbar.Text className="font-face-rumor-lg">The Silvertones</Navbar.Text>
+          <Navbar.Text className="font-face-rumor-lg silver-gradient">The Silvertones</Navbar.Text>
         </Navbar>
         <Navbar>
           <Nav>
