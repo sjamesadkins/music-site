@@ -30,10 +30,8 @@ const Navi = () => {
                 <Image
                 src={skull}
                 roundedCircle
-                width="auto"
-                height="250"
-                style={{marginRight: "0", marginTop: "30%" }}
-                alt="Laurels Logo"
+                alt="The Silvertones logo"
+                style={{ height: "clamp(120px, 25vw, 250px)", width: "auto" }}
                 />
             </Navbar.Brand>
         </Navbar>
