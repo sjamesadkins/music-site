@@ -36,7 +36,9 @@ const Navi = () => {
             </Navbar.Brand>
         </Navbar>
         <Navbar>
-          <Navbar.Text className="font-face-rumor-lg silver-gradient">The Silvertones</Navbar.Text>
+          <Navbar.Text className="font-face-rumor-lg silver-gradient">
+            The<br className="mobile-only-break" /> Silvertones
+          </Navbar.Text>
         </Navbar>
         <Navbar>
           <Nav>

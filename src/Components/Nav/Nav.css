@@ -2,6 +2,22 @@
     font-family: "rumor";
     font-size: 500%;
     color: #006cbf;
+    display: inline-block;
+    text-align: center;
+    line-height: 1;
+}
+
+.mobile-only-break {
+    display: none;
+}
+
+@media (max-width: 558px) {
+    .font-face-rumor-lg {
+        font-size: 320%;
+    }
+    .mobile-only-break {
+        display: inline;
+    }
 }
 
 .silver-gradient {
