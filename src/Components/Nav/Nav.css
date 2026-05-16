@@ -32,26 +32,22 @@
     font-family: "rumor";
     font-size: 200%;
     color: #bf5000;
+    -webkit-tap-highlight-color: transparent;
 }
 
-.font-face-rumor-sm-nav:hover {
-    font-family: "rumor";
-    font-size: 200%;
+.font-face-rumor-sm-nav:hover,
+.font-face-rumor-sm-nav:focus {
     color: #006cbf;
+}
+
+.font-face-rumor-sm-nav.active {
+    color: #ffffff !important;
 }
 
 .navbar {
     background-color: #242424;
     display: flex;
     justify-content: center;
-
-    .nav-link.active {
-        color: white;
-    }
-
-    .brand {
-        display: flex;
-    }
 }
 
 .span {

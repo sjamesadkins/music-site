@@ -17,11 +17,7 @@ const Navi = () => {
         "contact": <Contact />,
     };
 
-    const [view, setView] = useState(<About />);
-
-    const handleClick = (page) => {
-        setView(pages[page])
-    };
+    const [currentPage, setCurrentPage] = useState("about");
 
   return (
     <>
@@ -42,18 +38,19 @@ const Navi = () => {
         </Navbar>
         <Navbar>
           <Nav>
-            {Object.entries(pages).map(([k], index) => (
+            {Object.keys(pages).map((k, index) => (
               <div key={index} className="nav-link-wrapper">
                 <Nav.Link
                   href={`#${k}`}
                   className="font-face-rumor-sm-nav"
-                  onClick={() => handleClick(k)}
+                  active={currentPage === k}
+                  onClick={() => setCurrentPage(k)}
                 >{k}</Nav.Link>
               </div>
             ))}
           </Nav>
         </Navbar>
-      <div>{view}</div>
+      <div>{pages[currentPage]}</div>
     </>
   );
 };
