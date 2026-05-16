@@ -40,19 +40,15 @@ const Navi = () => {
         </Navbar>
         <Navbar>
           <Nav>
-            {Object.entries(pages).map(([k], index) => {
-                return (
-                <div>
-                <Nav.Link 
-                    key={index}
-                    href={`#${k}`}
-                    className={"font-face-rumor-sm-nav"}
-                    onClick={() => handleClick(k)}
-                    >{k}
-                </Nav.Link>
-                &nsbp$nsbp&nsbp
-                </div>                    
-                )})}
+            {Object.entries(pages).map(([k], index) => (
+              <div key={index} className="nav-link-wrapper">
+                <Nav.Link
+                  href={`#${k}`}
+                  className="font-face-rumor-sm-nav"
+                  onClick={() => handleClick(k)}
+                >{k}</Nav.Link>
+              </div>
+            ))}
           </Nav>
         </Navbar>
       <div>{view}</div>

@@ -1,14 +1,11 @@
 import "./About.css";
 
-const About = () => {
-  return (
-    <div className="page">
-      <br></br> <br></br><br></br><br></br>
-      <div className="text">
-        <p> Laurels is composed of Kevin Korinek on guitars, Sam Adkins on bass, and Henry Moyerman on drums.</p>
-      </div>
+const About = () => (
+  <div className="page">
+    <div className="text">
+      <p>The Silvertones are a duo consisting of Kevin Korinek and Sam Adkins hailing from St. Louis, MO. They make great music together and build a vibe.</p>
     </div>
-  );
-};
+  </div>
+);
 
 export default About;
