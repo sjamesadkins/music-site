@@ -1,121 +1,144 @@
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import "./Contact.css";
 import { ModalBody } from "react-bootstrap";
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import * as formik from "formik";
 import * as yup from "yup";
+import "./Contact.css";
 
 const Contact = () => {
   const { Formik } = formik;
 
-  const [show, setShow] = useState(false);
-  const [validation, setValidation] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  })
+  const [successOpen, setSuccessOpen] = useState(false);
+  const [errorOpen, setErrorOpen] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
 
   const form = useRef();
 
+  const schema = yup.object().shape({
+    user_name: yup.string().required("Name is required"),
+    user_email: yup
+      .string()
+      .email("Please enter a valid email")
+      .required("Email is required"),
+    message: yup.string().required("Message is required"),
+  });
 
-  const handleClick = () => setShow(true);
-  const handleClose = () => setShow(false);
-
-  const sendEmail = (e) => {
-    console.log(e)
-    e.preventDefault();
-      emailjs
-      // .sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, {
-      .sendForm('fiction_service', 'contact_form', form.current, {
-        publicKey: 'MIMdJYunxMPNG7bsq',
+  const sendEmail = (values, { resetForm }) => {
+    emailjs
+      .sendForm("fiction_service", "contact_form", form.current, {
+        publicKey: "MIMdJYunxMPNG7bsq",
       })
       .then(
         () => {
-          console.log('SUCCESS!');
+          setSuccessOpen(true);
+          resetForm();
         },
         (error) => {
-          console.log('FAILED...', error.text);
-        },
+          console.error("EmailJS failed:", error);
+          setErrorMsg(error?.text || "Something went wrong. Please try again.");
+          setErrorOpen(true);
+        }
       );
-  }
+  };
 
-  const schema = yup.object().shape({
-    hand: yup.string().required(),
-    email: yup.string().required(),
-    message: yup.string().required(),
-  });
+  return (
+    <div className="page">
+      <p className="contact-intro">
+        The Silvertones would love to play your club, party, event, private island... whatever. Please send them a message below and they will arrange a show for you.
+      </p>
 
-    return (
-      <div className="page">
+      <Modal show={successOpen} onHide={() => setSuccessOpen(false)}>
+        <Modal.Header closeButton>
+          <Modal.Title>Message Sent!</Modal.Title>
+        </Modal.Header>
+        <ModalBody>
+          <p>Thank you for reaching out!</p>
+        </ModalBody>
+      </Modal>
 
-        <script type="text/javascript"
-                src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-        </script>
-        <script type="text/javascript">
-          (function(){
-              emailjs.init({
-                publicKey: "MIMdJYunxMPNG7bsq",
-              })
-          })();
-        </script>
+      <Modal show={errorOpen} onHide={() => setErrorOpen(false)}>
+        <Modal.Header closeButton>
+          <Modal.Title>Something Went Wrong</Modal.Title>
+        </Modal.Header>
+        <ModalBody>
+          <p>{errorMsg}</p>
+        </ModalBody>
+      </Modal>
 
-          <Modal show={show} onHide={handleClose}>
-            <Modal.Dialog>
-              <Modal.Header closeButton>
-                <Modal.Title>Message Sent!</Modal.Title>
-              </Modal.Header>
-              <ModalBody>
-                <p>Thank you for reaching out!</p>
-              </ModalBody>
-            </Modal.Dialog>
-          </Modal>
-
-          <Formik
-          validationSchema={schema}
-          onSubmit={console.log()}
-          initialValues={{
-            hand: '',
-            email: '',
-            message: '',
-          }}
-        >
-          <Form ref={form} id="contact_form" onSubmit={sendEmail}>
-            <Form.Group
-              className="form"
-              style={{ paddingTop: "3%" }}
-              controlId="exampleForm.ControlInput1"
-            >
+      <Formik
+        validationSchema={schema}
+        onSubmit={sendEmail}
+        initialValues={{ user_name: "", user_email: "", message: "" }}
+      >
+        {({ handleSubmit, handleChange, values, errors, touched }) => (
+          <Form
+            ref={form}
+            id="contact_form"
+            noValidate
+            onSubmit={handleSubmit}
+          >
+            <Form.Group className="form" style={{ paddingTop: "3%" }}>
               <Form.Label>Name</Form.Label>
-              <Form.Control type="text" name="user_name" placeholder="Your name here" required defaultValue={formData.name}/>
-              <Form.Control.Feedback type="invalid" />
+              <Form.Control
+                type="text"
+                name="user_name"
+                placeholder="Your name here"
+                value={values.user_name}
+                onChange={handleChange}
+                isInvalid={touched.user_name && !!errors.user_name}
+              />
+              <Form.Control.Feedback type="invalid">
+                {errors.user_name}
+              </Form.Control.Feedback>
             </Form.Group>
-            <Form.Group className="form" controlId="exampleForm.ControlInput2">
+
+            <Form.Group className="form">
               <Form.Label>Email address</Form.Label>
-              <Form.Control type="email" name="user_email" placeholder="name@example.com" required/>
+              <Form.Control
+                type="email"
+                name="user_email"
+                placeholder="name@example.com"
+                value={values.user_email}
+                onChange={handleChange}
+                isInvalid={touched.user_email && !!errors.user_email}
+              />
+              <Form.Control.Feedback type="invalid">
+                {errors.user_email}
+              </Form.Control.Feedback>
             </Form.Group>
-            <Form.Group className="form" controlId="exampleForm.ControlTextarea1">
-              <Form.Label>Gimme us the Deets</Form.Label>
-              <Form.Control as="textarea" name="message" placeholder="Write something good... " rows={5} required/>
+
+            <Form.Group className="form">
+              <Form.Label>Share the Deets</Form.Label>
+              <Form.Control
+                as="textarea"
+                name="message"
+                placeholder="Write something good..."
+                rows={5}
+                value={values.message}
+                onChange={handleChange}
+                isInvalid={touched.message && !!errors.message}
+              />
+              <Form.Control.Feedback type="invalid">
+                {errors.message}
+              </Form.Control.Feedback>
             </Form.Group>
 
             <Button
               className="btn"
-              onClick={handleClick}
               type="submit"
               size="lg"
               variant="outline"
-              value="Send"
             >
               Hit Me!
             </Button>
           </Form>
-        </Formik>
-      </div>
-    );
+        )}
+      </Formik>
+    </div>
+  );
 };
 
 export default Contact;

@@ -9,7 +9,7 @@ import tik from "/src/Assets/Images/tik.jpeg";
 const tiles = [
   { type: "video", src: desperado, label: "Desperado" },
   { type: "video", src: fastasyou, label: "Fast as You" },
-  { type: "video", src: tearsforfears, label: "Tears for Fears" },
+  { type: "video", src: tearsforfears, label: "Everbody Wants to Rule..." },
   { type: "image", src: genes, alt: "Genes" },
   { type: "image", src: chicago, alt: "Chicago" },
   { type: "image", src: tik, alt: "Tik" },

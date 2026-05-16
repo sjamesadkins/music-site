@@ -1,40 +1,81 @@
 .page {
-    background-color: #242424;
-    width: 100%;
-    text-align: center;
-    padding-left: 20%;
-    padding-right: 20%;
-    color: #fff7e6;
+  background-color: #242424;
+  width: 100%;
+  text-align: center;
+  color: #fff7e6;
+}
+
+.page > * {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-intro {
+  padding-top: 3rem;
+  padding-bottom: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #fff7e6;
 }
 
 .form {
-    padding-bottom: 3%;
+  padding-bottom: 1rem;
+  text-align: left;
 }
 
-.btn, .btn:focus, .btn:active {
-    color: #fff7e6;
-    background-color: #242424;
-    border-color: #b3cccc;
+.form .form-label {
+  color: #b3cccc;
+  font-weight: 500;
+}
+
+.form .form-control {
+  background-color: #2e2e2e;
+  color: #fff7e6;
+  border-color: #b3cccc;
+}
+
+.form .form-control:focus {
+  background-color: #2e2e2e;
+  color: #fff7e6;
+  border-color: #bf5000;
+  box-shadow: 0 0 0 0.2rem rgba(191, 80, 0, 0.25);
+}
+
+.form .form-control::placeholder {
+  color: #888;
+}
+
+.form .invalid-feedback {
+  color: #d7820a;
+}
+
+.btn,
+.btn:focus,
+.btn:active {
+  color: #fff7e6;
+  background-color: #242424;
+  border-color: #b3cccc;
+  margin-top: 0.5rem;
 }
 
 .btn:hover {
-    color: black;
-    background-color: #b3cccc;
-    /* border-color: #b3cccc; */
-    border-color: #d7820a;
-    border-width: 2px;
-    font-weight: bold;
+  color: black;
+  background-color: #b3cccc;
+  border-color: #d7820a;
+  border-width: 2px;
+  font-weight: bold;
 }
 
 .font-face-rumor-sm {
-    font-family: "rumor";
-    font-size: 200%;
-    color: #fff7e6;
+  font-family: "rumor";
+  font-size: 200%;
+  color: #fff7e6;
 }
 
-.header {
-    padding-top: 20pt;
-    padding-bottom: 20pt;
+@media (max-width: 600px) {
+  .page > * {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
-
-  
