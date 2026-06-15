@@ -5,7 +5,7 @@ import { useState } from "react";
 import About from "../About/About.jsx";
 import Media from "../Media/Media.jsx";
 import Contact from "../Contact/Contact.jsx";
-import skull from "/src/Assets/Images/silver_skull.png";
+import picks from "/src/Assets/Images/picks.png";
 
 import "./Nav.css";
 
@@ -24,7 +24,7 @@ const Navi = () => {
         <Navbar>
             <Navbar.Brand>
                 <Image
-                src={skull}
+                src={picks}
                 roundedCircle
                 alt="The Silvertones logo"
                 style={{ height: "clamp(120px, 25vw, 250px)", width: "auto" }}
