@@ -5,7 +5,7 @@ import { useState } from "react";
 import About from "../About/About.jsx";
 import Media from "../Media/Media.jsx";
 import Contact from "../Contact/Contact.jsx";
-import picks from "/src/Assets/Images/picks.png";
+import silvertonesLogo from "/src/Assets/Images/silvertones-logo.webp";
 
 import "./Nav.css";
 
@@ -23,12 +23,13 @@ const Navi = () => {
     <>
         <Navbar>
             <Navbar.Brand>
+              <div className="brand-logo-frame">
                 <Image
-                src={picks}
-                roundedCircle
+                src={silvertonesLogo}
                 alt="The Silvertones logo"
-                style={{ height: "clamp(120px, 25vw, 250px)", width: "auto" }}
+                className="brand-logo"
                 />
+              </div>
             </Navbar.Brand>
         </Navbar>
         <Navbar>

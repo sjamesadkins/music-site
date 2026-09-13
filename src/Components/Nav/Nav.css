@@ -11,6 +11,21 @@
     display: none;
 }
 
+.brand-logo-frame {
+    width: clamp(120px, 25vw, 250px);
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.brand-logo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 60% center;
+}
+
 @media (max-width: 558px) {
     .font-face-rumor-lg {
         font-size: 320%;
