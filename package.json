@@ -9,7 +9,7 @@
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "deploy": "vite build && gh-pages -d dist --cname silvertoneslive.com"
+    "deploy": "gh workflow run deploy.yml --ref main"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",

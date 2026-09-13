@@ -1,0 +1,71 @@
+name: Build and publish website
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - name: Preserve custom domain
+        run: echo silvertoneslive.com > dist/CNAME
+      - uses: actions/upload-pages-artifact@v4
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        with:
+          path: dist
+
+  deploy:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/download-artifact@v4
+        with:
+          name: github-pages
+          path: ${{ runner.temp }}/pages-artifact
+      - name: Keep built files on gh-pages
+        env:
+          BUILD_DIR: ${{ runner.temp }}/pages-build
+          PUBLISH_DIR: ${{ runner.temp }}/pages-branch
+        run: |
+          mkdir -p "$BUILD_DIR"
+          tar -xf "$RUNNER_TEMP/pages-artifact/artifact.tar" -C "$BUILD_DIR"
+          git fetch origin gh-pages
+          git worktree add --detach "$PUBLISH_DIR" FETCH_HEAD
+          rsync -a --delete --exclude=.git "$BUILD_DIR/" "$PUBLISH_DIR/"
+          touch "$PUBLISH_DIR/.nojekyll"
+          git -C "$PUBLISH_DIR" add --all
+          if ! git -C "$PUBLISH_DIR" diff --cached --quiet; then
+            git -C "$PUBLISH_DIR" -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m "Build from $GITHUB_SHA"
+            git -C "$PUBLISH_DIR" push origin HEAD:gh-pages
+          fi
+      - uses: actions/configure-pages@v5
+      - name: Publish website
+        id: deployment
+        uses: actions/deploy-pages@v4
