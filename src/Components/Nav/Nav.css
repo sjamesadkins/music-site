@@ -81,3 +81,14 @@
 .nav-link-wrapper {
     margin: 0 1.5rem;
 }
+
+/* Keep all navigation links inside narrow phone viewports. */
+@media (max-width: 500px) {
+    .nav-link-wrapper {
+        margin: 0 clamp(0.25rem, 2vw, 0.75rem);
+    }
+
+    .font-face-rumor-sm-nav {
+        font-size: clamp(1.4rem, 6.5vw, 2rem);
+    }
+}
