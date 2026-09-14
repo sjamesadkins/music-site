@@ -43,16 +43,27 @@
         -3px -2px 0 #808080;
 }
 
-.font-face-rumor-sm-nav {
+.navbar .font-face-rumor-sm-nav {
     font-family: "rumor";
     font-size: 200%;
     color: #bf5000;
     -webkit-tap-highlight-color: transparent;
+    /* Keep the slanted glyph tips inside the link's repaint boundary. */
+    padding-inline: 0.3em;
+    contain: paint;
+    background-color: #242424;
+    transition: none;
 }
 
-.font-face-rumor-sm-nav:hover,
-.font-face-rumor-sm-nav:focus {
+.navbar .font-face-rumor-sm-nav:focus-visible {
     color: #006cbf;
+}
+
+/* Touch browsers can retain :hover after a tap; only use it for a mouse. */
+@media (hover: hover) and (pointer: fine) {
+    .navbar .font-face-rumor-sm-nav:hover {
+        color: #006cbf;
+    }
 }
 
 .font-face-rumor-sm-nav.active {
@@ -88,7 +99,7 @@
         margin: 0 clamp(0.25rem, 2vw, 0.75rem);
     }
 
-    .font-face-rumor-sm-nav {
+    .navbar .font-face-rumor-sm-nav {
         font-size: clamp(1.4rem, 6.5vw, 2rem);
     }
 }
