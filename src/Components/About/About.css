@@ -20,6 +20,21 @@
     line-height: 1.6;
 }
 
+.press-kit-download {
+    font-family: "rumor";
+    font-size: 1.35rem;
+    margin-bottom: 0;
+}
+
+.press-kit-download a {
+    color: #bf5000;
+}
+
+.press-kit-download a:hover,
+.press-kit-download a:focus-visible {
+    color: #006cbf;
+}
+
 .header {
     padding-top: 20pt;
     padding-bottom: 20pt;
