@@ -1,1 +1,2 @@
 src/Assets/Images/laurels.jpg filter=lfs diff=lfs merge=lfs -text
+src/Assets/Files/*.pdf binary

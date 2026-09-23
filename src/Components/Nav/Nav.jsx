@@ -1,7 +1,7 @@
 import Image from "react-bootstrap/Image";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import About from "../About/About.jsx";
 import Media from "../Media/Media.jsx";
 import Contact from "../Contact/Contact.jsx";
@@ -17,25 +17,34 @@ const Navi = () => {
         "contact": <Contact />,
     };
 
-    const [currentPage, setCurrentPage] = useState("about");
+    const getPageFromHash = () => {
+      const page = window.location.hash.slice(1).toLowerCase();
+      return Object.hasOwn(pages, page) ? page : "about";
+    };
+
+    const [currentPage, setCurrentPage] = useState(getPageFromHash);
+
+    useEffect(() => {
+      const updatePageFromHash = () => setCurrentPage(getPageFromHash());
+      window.addEventListener("hashchange", updatePageFromHash);
+      return () => window.removeEventListener("hashchange", updatePageFromHash);
+    }, []);
 
   return (
     <>
-        <Navbar>
-            <Navbar.Brand>
-              <div className="brand-logo-frame">
-                <Image
+        <Navbar className="site-header">
+          <Navbar.Brand className="brand-lockup">
+            <div className="brand-logo-frame">
+              <Image
                 src={silvertonesLogo}
                 alt="The Silvertones logo"
                 className="brand-logo"
-                />
-              </div>
-            </Navbar.Brand>
-        </Navbar>
-        <Navbar>
-          <Navbar.Text className="font-face-rumor-lg silver-gradient">
-            The<br className="mobile-only-break" /> Silvertones
-          </Navbar.Text>
+              />
+            </div>
+            <Navbar.Text className="font-face-rumor-lg silver-gradient">
+              The Silvertones
+            </Navbar.Text>
+          </Navbar.Brand>
         </Navbar>
         <Navbar>
           <Nav>
@@ -45,7 +54,6 @@ const Navi = () => {
                   href={`#${k}`}
                   className="font-face-rumor-sm-nav"
                   active={currentPage === k}
-                  onClick={() => setCurrentPage(k)}
                 >{k}</Nav.Link>
               </div>
             ))}

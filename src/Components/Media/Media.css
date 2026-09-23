@@ -1,7 +1,7 @@
 .grid-container {
   display: grid;
   justify-content: center;
-  align-content: center;
+  align-content: start;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
   padding: 1rem;
@@ -29,6 +29,19 @@
   font-family: "rumor";
   font-size: 1.1rem;
   margin-top: 0.5rem;
+}
+
+.press-kit-photo-link {
+  display: block;
+}
+
+.press-kit-label {
+  color: #bf5000;
+  font-size: 1.35rem;
+}
+
+.video-item video {
+  background-color: #000;
 }
 
 @media (max-width: 830px) {
